@@ -2,7 +2,7 @@ package racingcar.service
 
 import racingcar.domain.Car
 import racingcar.domain.Random
-import racingcar.domain.RandomResult
+import racingcar.domain.Move
 
 class RacingCarService {
     fun startRound(carRacers: List<Car>) {
@@ -12,8 +12,8 @@ class RacingCarService {
     }
 
     private fun forwardOrStop(racer: Car) {
-        val randomResult = RandomResult.convertDiceResult(Random().invoke())
-        if (randomResult == RandomResult.MOVING_FORWARD) {
+        val MOVE = Move.convertMove(Random().invoke())
+        if (MOVE == MOVE.MOVING_FORWARD) {
             racer.forward()
         }
     }
