@@ -2,9 +2,12 @@ package racingcar.controller
 
 import racingcar.presentation.InputView.inputCarNames
 import racingcar.presentation.InputView.inputTryCount
+import racingcar.service.RacingCarService
 import racingcar.util.factory.CarFactory
 
-class RacingCarController {
+class RacingCarController(
+    private val racingCarService: RacingCarService
+) {
 
     fun run() {
         val cars = convertCar(readCarNames())
