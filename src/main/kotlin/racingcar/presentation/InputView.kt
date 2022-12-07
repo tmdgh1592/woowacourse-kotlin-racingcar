@@ -10,18 +10,18 @@ class InputView {
     private val outputView = OutputView()
     private val inputValidator = InputValidator()
 
-    fun inputCarNames(): List<String> {
+    fun readCarNames(): List<String> {
         outputView.printMessageWithLine(CAR_NAMES_INPUT_MESSAGE)
         return try {
             val carNames = Console.readLine().split(CAR_INPUT_SPLITTER)
             inputValidator.validateCarNames(carNames.map { it.trim() })
         } catch (error: IllegalArgumentException) {
             outputView.printError(error)
-            inputCarNames()
+            readCarNames()
         }
     }
 
-    fun inputTryCount(): Int {
+    fun readTryCount(): Int {
         outputView.printMessageWithLine(TRY_COUNT_INPUT_MESSAGE)
         return try {
             val tryCount = Console.readLine().trim()
@@ -29,7 +29,7 @@ class InputView {
             inputValidator.validateTryCount(tryCount)
         } catch (error: IllegalArgumentException) {
             outputView.printError(error)
-            inputTryCount()
+            readTryCount()
         }
     }
 }

@@ -29,9 +29,9 @@ class RacingCarController(
 
     private fun getWinners(cars: List<Car>) = racingCarService.getWinners(cars)
 
-    private fun readCarNames(): List<String> = inputView.inputCarNames()
+    private fun readCarNames(): List<String> = inputView.readCarNames()
 
-    private fun readTryCount(): Int = inputView.inputTryCount()
+    private fun readTryCount(): Int = inputView.readTryCount()
 
     private fun printRoundResult(cars: List<Car>) = outputView.printRoundResult(cars)
 
