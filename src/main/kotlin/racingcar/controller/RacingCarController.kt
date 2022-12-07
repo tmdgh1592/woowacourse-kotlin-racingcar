@@ -11,7 +11,6 @@ import racingcar.util.factory.CarFactory
 class RacingCarController(
     private val racingCarService: RacingCarService = RacingCarService()
 ) {
-
     fun run() {
         val cars = convertCar(readCarNames())
         val tryCount = readTryCount()

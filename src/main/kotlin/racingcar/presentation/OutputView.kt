@@ -19,11 +19,7 @@ object OutputView {
 
     fun printMessageWithLine(message: String) = println(message)
 
-    fun printError(error: Exception) {
-        println(error.message)
-    }
+    fun printError(error: Exception) = println(error.message)
 
-    fun printEnter() {
-        println()
-    }
+    fun printEnter() = println()
 }
