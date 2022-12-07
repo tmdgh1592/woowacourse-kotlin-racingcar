@@ -3,7 +3,9 @@ package racingcar.controller
 import racingcar.domain.Car
 import racingcar.presentation.InputView.inputCarNames
 import racingcar.presentation.InputView.inputTryCount
+import racingcar.presentation.OutputView
 import racingcar.service.RacingCarService
+import racingcar.util.CAR_RACING_RESULT_MESSAGE
 import racingcar.util.factory.CarFactory
 
 class RacingCarController(
@@ -13,18 +15,22 @@ class RacingCarController(
     fun run() {
         val cars = convertCar(readCarNames())
         val tryCount = readTryCount()
-        val raceResult = race(tryCount, cars)
+        race(tryCount, cars)
+    }
+
+    private fun race(totalRound: Int, cars: List<Car>) {
+        OutputView.printMessage(CAR_RACING_RESULT_MESSAGE)
+        for (round in 0 until totalRound) {
+            racingCarService.startRound(cars)
+            printRoundResult(cars)
+        }
     }
 
     private fun readCarNames(): List<String> = inputCarNames()
 
     private fun readTryCount(): Int = inputTryCount()
 
-    private fun race(totalRound: Int, cars: List<Car>) {
-        for (round in 0 until totalRound) {
-            racingCarService.startRound(cars)
-        }
-    }
+    private fun printRoundResult(cars: List<Car>) = OutputView.printRoundResult(cars)
 
     private fun convertCar(carNames: List<String>) = CarFactory.createAll(carNames)
 }
