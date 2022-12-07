@@ -17,4 +17,10 @@ class RacingCarService {
             racer.forward()
         }
     }
+
+    fun getWinners(carRacers: List<Car>): List<String> {
+        val winnerStandard = carRacers.sortedDescending()[0]
+        return carRacers.filter { it == winnerStandard }
+            .map { it.name() }
+    }
 }

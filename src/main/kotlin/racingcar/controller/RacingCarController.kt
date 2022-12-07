@@ -24,7 +24,10 @@ class RacingCarController(
             racingCarService.startRound(cars)
             printRoundResult(cars)
         }
+        val winners = getWinners(cars)
     }
+
+    private fun getWinners(cars: List<Car>) = racingCarService.getWinners(cars)
 
     private fun readCarNames(): List<String> = inputCarNames()
 
