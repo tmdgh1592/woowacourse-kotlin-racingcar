@@ -12,8 +12,8 @@ class RacingCarService {
     }
 
     private fun forwardOrStop(racer: Car) {
-        val MOVE = Move.convertMove(Random().invoke())
-        if (MOVE == MOVE.MOVING_FORWARD) {
+        val move = Move.convertMove(Random().invoke())
+        if (move == Move.MOVING_FORWARD) {
             racer.forward()
         }
     }
