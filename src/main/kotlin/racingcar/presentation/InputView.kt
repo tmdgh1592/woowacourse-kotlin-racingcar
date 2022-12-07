@@ -3,8 +3,8 @@ package racingcar.presentation
 import camp.nextstep.edu.missionutils.Console
 import racingcar.util.CAR_INPUT_SPLITTER
 import racingcar.util.CAR_NAMES_INPUT_MESSAGE
-import racingcar.util.InputValidator
 import racingcar.util.TRY_COUNT_INPUT_MESSAGE
+import racingcar.util.InputValidator
 
 class InputView {
     private val outputView = OutputView()
