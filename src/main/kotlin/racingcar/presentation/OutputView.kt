@@ -4,7 +4,7 @@ import racingcar.domain.Car
 import racingcar.util.WINNER_RESULT_MESSAGE
 import racingcar.util.WINNER_SPLITTER
 
-object OutputView {
+class OutputView {
     fun printRoundResult(cars: List<Car>) {
         cars.forEach { car -> println(car) }
         printEnter()
