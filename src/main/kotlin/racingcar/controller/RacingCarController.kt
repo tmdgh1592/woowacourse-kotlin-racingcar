@@ -24,7 +24,7 @@ class RacingCarController(
             racingCarService.startRound(cars)
             printRoundResult(cars)
         }
-        val winners = getWinners(cars)
+        printWinners(getWinners(cars))
     }
 
     private fun getWinners(cars: List<Car>) = racingCarService.getWinners(cars)
@@ -34,6 +34,8 @@ class RacingCarController(
     private fun readTryCount(): Int = inputTryCount()
 
     private fun printRoundResult(cars: List<Car>) = OutputView.printRoundResult(cars)
+
+    private fun printWinners(winners: List<String>) = OutputView.printWinners(winners)
 
     private fun convertCar(carNames: List<String>) = CarFactory.createAll(carNames)
 }
