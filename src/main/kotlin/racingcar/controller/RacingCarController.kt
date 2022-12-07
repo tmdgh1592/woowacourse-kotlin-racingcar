@@ -19,7 +19,7 @@ class RacingCarController(
     }
 
     private fun race(totalRound: Int, cars: List<Car>) {
-        OutputView.printMessage(CAR_RACING_RESULT_MESSAGE)
+        OutputView.printMessageWithLine(CAR_RACING_RESULT_MESSAGE)
         for (round in 0 until totalRound) {
             racingCarService.startRound(cars)
             printRoundResult(cars)

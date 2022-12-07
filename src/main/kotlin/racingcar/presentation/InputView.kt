@@ -2,7 +2,7 @@ package racingcar.presentation
 
 import camp.nextstep.edu.missionutils.Console
 import racingcar.presentation.OutputView.printEnter
-import racingcar.presentation.OutputView.printMessage
+import racingcar.presentation.OutputView.printMessageWithLine
 import racingcar.util.CAR_INPUT_SPLITTER
 import racingcar.util.CAR_NAMES_INPUT_MESSAGE
 import racingcar.util.InputValidator
@@ -12,7 +12,7 @@ object InputView {
     private val inputValidator = InputValidator()
 
     fun inputCarNames(): List<String> {
-        printMessage(CAR_NAMES_INPUT_MESSAGE)
+        printMessageWithLine(CAR_NAMES_INPUT_MESSAGE)
         return try {
             val carNames = Console.readLine().split(CAR_INPUT_SPLITTER)
             inputValidator.validateCarNames(carNames.map { it.trim() })
@@ -23,7 +23,7 @@ object InputView {
     }
 
     fun inputTryCount(): Int {
-        printMessage(TRY_COUNT_INPUT_MESSAGE)
+        printMessageWithLine(TRY_COUNT_INPUT_MESSAGE)
         return try {
             val tryCount = Console.readLine().trim()
             printEnter()

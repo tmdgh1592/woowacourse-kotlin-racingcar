@@ -11,11 +11,13 @@ object OutputView {
     }
 
     fun printWinners(winners: List<String>) {
-        print(WINNER_RESULT_MESSAGE)
-        print(winners.joinToString(WINNER_SPLITTER))
+        printMessage(WINNER_RESULT_MESSAGE)
+        printMessage(winners.joinToString(WINNER_SPLITTER))
     }
 
-    fun printMessage(message: String) = println(message)
+    private fun printMessage(message: String) = print(message)
+
+    fun printMessageWithLine(message: String) = println(message)
 
     fun printError(error: Exception) {
         println(error.message)
